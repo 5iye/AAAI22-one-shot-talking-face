@@ -96,8 +96,12 @@ def test_with_input_audio_and_image(img_path, audio_path,phs, generator_ckpt, au
                 rot = rot_seq[i]
                 trans = trans_seq[i]
                 audio.append(audio_seq[i * 4:i * 4 + 4])
+            print(rot)
+            print(trans)
             tmp_pose = np.zeros([256, 256])
             draw_annotation_box(tmp_pose, np.array(rot), np.array(trans))
+            print(type(tmp_pose))
+            print(tmp_pose.shape)
             pose.append(tmp_pose)
 
         ph_frames.append(ph)
